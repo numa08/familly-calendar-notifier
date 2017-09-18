@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "mkdir -p build/intermediates/babel; mkdir -p build/generated/src; babel src -d build/intermediates/babel; browserify -t babelify -p gasify build/intermediates/babel/index.js -o build/generated/src/index.js",
-    "deply": "npm build; gapps push"
+    "test": "mocha --compilers js:babel-core/register src/*_test.js",
+    "deply": "npm run build; gapps push"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "gasify": "^0.1.1",
+    "mocha": "^3.5.3",
     "node-google-apps-script": "^1.1.5"
   }
 }

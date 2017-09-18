@@ -7,7 +7,7 @@ import {LineNotificator} from './line_notificator';
 import {Token} from './token'
 
 const notifyEvents = (type) => {
-  const calendars = new Calendars();
+  const calendars = new Calendars(CalendarApp);
   const messageBuilder = new MessageBuilder();
   const notificator = new LineNotificator(Token().line);
 
