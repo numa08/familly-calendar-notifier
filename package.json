@@ -1,0 +1,25 @@
+{
+  "name": "familly-calendar-notifier",
+  "version": "1.0.0",
+  "description": "my familly calendar change notificator for line",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p build/intermediates/babel; mkdir -p build/generated/src; babel src -d build/intermediates/babel; browserify -t babelify -p gasify build/intermediates/babel/index.js -o build/generated/src/index.js",
+    "deply": "npm build; gapps push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:numa08/familly-calendar-notifier"
+  },
+  "author": "numa08",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "gasify": "^0.1.1",
+    "node-google-apps-script": "^1.1.5"
+  }
+}
