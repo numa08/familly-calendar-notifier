@@ -12,7 +12,12 @@ export class Calendars {
   }
 
   findEventsOnToday(calendar) {
-    return calendar.getEventsForDay(new Date());
+    const today = (() => {
+      const d = new Date();
+      d.setHours(0 + 9, 0, 0); // JST 00:00 に合わせる
+      return d;
+    })();
+    return calendar.getEventsForDay(today);
   }
 
   findEventsOnWeek(calendar) {

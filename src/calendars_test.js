@@ -17,6 +17,7 @@ describe("calendars", () => {
   describe("日付の設定", () => {
     it("今日の日付が得られること", () => {
       const today = new Date()
+      today.setHours(9);
       const stub = {
         getEventsForDay: (d) => {
           assert.deepEqual(today.getFullYear(), d.getFullYear())
